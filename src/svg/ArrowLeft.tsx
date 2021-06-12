@@ -4,8 +4,8 @@ import Svg, { SvgProps, Path } from "react-native-svg"
 export function ArrowLeft(props: SvgProps) {
   return (
     <Svg
-      width={22}
-      height={20}
+      width={21}
+      height={15}
       viewBox="0 0 16 12"
       fill="none"
       {...props}

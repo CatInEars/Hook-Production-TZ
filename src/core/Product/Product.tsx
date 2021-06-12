@@ -1,11 +1,16 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Header } from './Header';
+import { commonStyles } from '../../common/commonStyles';
+import { Header } from '../components/Header';
+import { ProductInfo } from './ProductInfo';
 
 export function Product() {
   return (
-    <View>
-      <Header />
+    <View style={{ alignItems: 'center' }}>
+      <Header 
+        title={'Milk & Cheese'}
+      />
+      <ProductInfo />
     </View>
   );
 }
