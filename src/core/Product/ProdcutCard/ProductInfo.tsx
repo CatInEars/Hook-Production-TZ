@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
-import { commonStyles } from '../../common/commonStyles';
-import { CartInteraction } from '../components/CartInteraction';
+import { commonStyles } from '../../../common/commonStyles';
+import { CartInteraction } from '../../components/CartInteraction';
 
 interface IProps {
   product: IProduct
@@ -24,7 +24,9 @@ function productInfo({ product }: IProps) {
         </Text>
 
         <CartInteraction 
-          id={product.id} 
+          id={product.id}
+          width={45}
+          height={45}
         />
       </View>
 

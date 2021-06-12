@@ -1,16 +1,19 @@
 import React from 'react';
-import { View } from 'react-native';
-import { commonStyles } from '../../common/commonStyles';
+import { ScrollView, View } from 'react-native';
 import { Header } from '../components/Header';
-import { ProductCard } from './ProductCard';
+import { BuyWithThisProduct } from './BuyWithThisProduct/BuyWithThisProduct';
+import { ProductCard } from './ProdcutCard/ProductCard';
 
 export function Product() {
   return (
-    <View style={{ alignItems: 'center' }}>
-      <Header 
-        title={'Milk & Cheese'}
-      />
-      <ProductCard />
-    </View>
+    <ScrollView>
+      <View style={{alignItems: 'center'}}>
+        <Header 
+          title={'Milk & Cheese'}
+        />
+        <ProductCard />
+        <BuyWithThisProduct />
+      </View>
+    </ScrollView>
   );
 }

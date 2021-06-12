@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Animated } from 'react-native';
 import { commonStyles } from '../../common/commonStyles';
 import { ArrowLeft } from '../../svg/ArrowLeft';
 

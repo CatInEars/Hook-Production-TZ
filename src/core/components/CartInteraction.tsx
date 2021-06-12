@@ -11,15 +11,27 @@ interface IProps {
   cart: {
     [propName: number]: ICartProduct
   },
+  width?: number,
+  height?: number,
   onIncrement: any
-  onDecrement: any
+  onDecrement: any,
+  fontSize?: number
 }
 
-function cartInteraction({ id, cart, onIncrement, onDecrement }: IProps) {
-  const [cartCount, setCartCount] = useState(cart[id].count);
+function cartInteraction({ 
+  id, 
+  cart, 
+  onIncrement, 
+  onDecrement,
+  width,
+  height,
+  fontSize = 16
+}: IProps) {
+  const toBe = !!cart[id];
+  const [cartCount, setCartCount] = useState(toBe ? cart[id].count : 0);
 
   useEffect(() => {
-    setCartCount(cart[id].count);
+    setCartCount(toBe ? cart[id].count : 0);
   }, [cart])
 
   return (
@@ -32,17 +44,23 @@ function cartInteraction({ id, cart, onIncrement, onDecrement }: IProps) {
             activeOpacity={0.6}
           >
             <Trash 
-              width={45}
-              height={45}
+              width={width}
+              height={height}
             />
           </TouchableOpacity>
 
-          <Text style={commonStyles.cartCountText}>
+          <Text style={{
+            ...commonStyles.cartCountText,
+            fontSize
+          }}>
             {cartCount}
           </Text>
         </>
         :
-        <Text style={commonStyles.cartAddText}>
+        <Text style={{
+          ...commonStyles.cartAddText,
+          fontSize: fontSize + 2
+        }}>
           Add
         </Text>
       }
@@ -52,8 +70,8 @@ function cartInteraction({ id, cart, onIncrement, onDecrement }: IProps) {
         activeOpacity={0.6}
       >
         <Plus 
-          width={45}
-          height={45}
+          width={width}
+          height={height}
         />
       </TouchableOpacity>
     </View>

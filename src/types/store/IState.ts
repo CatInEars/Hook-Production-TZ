@@ -1,7 +1,8 @@
 interface IState {
-  productData: IProduct,
+  productData:  IProduct,
+  recomendedItem: IProduct[]
   cart: {
-    [propName: number]: ICartProduct
+    [id: number]: ICartProduct
   }
 }
 
@@ -11,6 +12,7 @@ interface IProduct {
   count: string,
   price: number,
   currency: string,
+  previeImage?: any
 }
 
 interface ICartProduct {

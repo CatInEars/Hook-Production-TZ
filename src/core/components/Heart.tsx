@@ -5,7 +5,11 @@ import { commonStyles } from '../../common/commonStyles';
 import { HeartActiveIcon } from '../../svg/HeartActiveIcon';
 import { HeartEmptyIcon } from '../../svg/HeartEmptyIcon';
 
-export function Heart() {
+interface IProps {
+  style?: any
+}
+
+export function Heart({ style }: IProps) {
   const [liked, setLiked] = useState(false);
   const widthHeight = useRef(new Animated.Value(0)).current;
 
@@ -14,13 +18,13 @@ export function Heart() {
     if (liked) {
       Animated.timing(widthHeight, {
         toValue: 0,
-        duration: 160,
+        duration: 180,
         useNativeDriver: false
       }).start();
     } else {
       Animated.timing(widthHeight, {
         toValue: 1,
-        duration: 160,
+        duration: 180,
         useNativeDriver: false
       }).start();
     }
@@ -29,9 +33,9 @@ export function Heart() {
   return (
     <TouchableOpacity
       onPress={handlePress}
-      activeOpacity={0.75}
+      activeOpacity={0.8}
     >
-      <View style={commonStyles.heartIconContainer}>
+      <View style={{...commonStyles.heartIconContainer, ...style}}>
         <Animated.View
           style={{
             width: widthHeight.interpolate({

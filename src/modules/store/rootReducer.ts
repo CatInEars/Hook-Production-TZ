@@ -2,12 +2,13 @@ import { initialState } from "./initialState";
 
 export function rootReducer(state = initialState, action: IActions): IState {
   if (action.type === 'CART_COUNT_INCREMENT') {
+    const toBe = !!state.cart[action.id];
     return {
       ...state,
       cart: {
         ...state.cart,
         [action.id.toString()]: {
-          count: state.cart[action.id].count + 1
+          count: toBe ? state.cart[action.id].count + 1 : 1
         }
       }
     }
