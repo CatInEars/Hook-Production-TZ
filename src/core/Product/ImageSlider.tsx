@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRef } from 'react';
 import { View, ScrollView, Image, Animated } from 'react-native';
-import { TEXT_COLOR_GRAY } from '../../common/colors';
+import { TEXT_COLOR_BLACK, TEXT_COLOR_GRAY } from '../../common/colors';
 import { commonStyles } from '../../common/commonStyles';
 import { sliderImageArr } from '../../modules/sliderImageArr';
 
@@ -65,7 +65,7 @@ export function ImageSlider() {
                       300 * index,
                       300 * (index + 1)
                     ],
-                    outputRange: [TEXT_COLOR_GRAY, 'black', TEXT_COLOR_GRAY],
+                    outputRange: [TEXT_COLOR_GRAY, TEXT_COLOR_BLACK, TEXT_COLOR_GRAY],
                     extrapolate: "clamp"
                   })
                 }}

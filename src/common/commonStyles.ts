@@ -32,8 +32,7 @@ export const commonStyles = StyleSheet.create({
     zIndex: 1
   },
   productInfoContainer: {
-    backgroundColor: 'white', 
-    height: 500,
+    backgroundColor: 'white',
     width: '90%',
     borderRadius: 8, 
     marginTop: -51,
@@ -64,5 +63,37 @@ export const commonStyles = StyleSheet.create({
     height: 8,
     borderRadius: 4,
     marginHorizontal: 4
+  },
+  productNameContainer: {
+    marginTop: 15,
+    width: '80%'
+  },
+  productNameText: {
+    color: TEXT_COLOR_BLACK,
+    fontSize: 18
+  },
+  productCountPrice: {
+    color: '#999999',
+    marginVertical: 8,
+    fontSize: 15
+  },
+  productPrice: {
+    fontSize: 28,
+  },
+  cartCountText: {
+    fontSize: 18,
+    color: TEXT_COLOR_BLACK,
+    marginHorizontal: 10
+  },
+  cartAddText: {
+    color: ORANGE,
+    fontSize: 16,
+    marginRight: 8
+  },
+  productLine: {
+    height: 1,
+    borderRadius: 1,
+    backgroundColor: '#EBEBEB',
+    marginTop: 14
   }
 });

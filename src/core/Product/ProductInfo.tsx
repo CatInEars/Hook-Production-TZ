@@ -1,14 +1,42 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
 import { commonStyles } from '../../common/commonStyles';
-import { ImageSlider } from './ImageSlider';
-import { Structure } from './Structure';
+import { CartInteraction } from '../components/CartInteraction';
 
-export function ProductInfo() {
+interface IProps {
+  product: IProduct
+}
+function productInfo({ product }: IProps) {
   return (
-    <View style={commonStyles.productInfoContainer}>
-      <Structure />
-      <ImageSlider />
+    <View style={commonStyles.productNameContainer}>
+      <Text style={commonStyles.productNameText}>
+        {product.name}
+      </Text>
+
+      <Text style={commonStyles.productCountPrice}>
+        {product.count} / {product.currency}{product.price}
+      </Text>
+
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <Text style={commonStyles.productPrice}>
+          {product.currency}{product.price}
+        </Text>
+
+        <CartInteraction 
+          id={product.id} 
+        />
+      </View>
+
+      <View 
+        style={commonStyles.productLine}
+      />
     </View>
   );
 }
+
+export const ProductName = connect(
+  (state: IState) => ({
+    product: state.productData
+  })
+)(productInfo);

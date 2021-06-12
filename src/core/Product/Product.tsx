@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { commonStyles } from '../../common/commonStyles';
 import { Header } from '../components/Header';
-import { ProductInfo } from './ProductInfo';
+import { ProductCard } from './ProductCard';
 
 export function Product() {
   return (
@@ -10,7 +10,7 @@ export function Product() {
       <Header 
         title={'Milk & Cheese'}
       />
-      <ProductInfo />
+      <ProductCard />
     </View>
   );
 }
