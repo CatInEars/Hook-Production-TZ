@@ -1,11 +1,11 @@
 import * as React from "react"
 import Svg, { SvgProps, Path } from "react-native-svg"
 
-export function HeartIcon(props: SvgProps) {
+export function HeartEmptyIcon(props: SvgProps) {
   return (
     <Svg
-      width={'100%'} 
-      height={'100%'}
+      width='100%'
+      height='100%'
       viewBox="0 0 20 19"
       fill="none"
       {...props}

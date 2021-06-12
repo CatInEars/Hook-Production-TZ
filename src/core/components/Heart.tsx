@@ -1,35 +1,57 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
 import { useRef } from 'react';
-import { Animated, View, TouchableWithoutFeedback } from 'react-native';
+import { Animated, TouchableOpacity, View } from 'react-native';
 import { commonStyles } from '../../common/commonStyles';
-import { HeartIcon } from '../../svg/HeartIcon';
+import { HeartActiveIcon } from '../../svg/HeartActiveIcon';
+import { HeartEmptyIcon } from '../../svg/HeartEmptyIcon';
 
 export function Heart() {
   const [liked, setLiked] = useState(false);
   const widthHeight = useRef(new Animated.Value(0)).current;
 
-  useEffect(() => {
-    Animated.timing(widthHeight, {
-      toValue: 1,
-      duration: 1000,
-      useNativeDriver: false
-    }).start()
-  }, [liked]);
+  const handlePress = () => {
+    setLiked(!liked);
+    if (liked) {
+      Animated.timing(widthHeight, {
+        toValue: 0,
+        duration: 160,
+        useNativeDriver: false
+      }).start();
+    } else {
+      Animated.timing(widthHeight, {
+        toValue: 1,
+        duration: 160,
+        useNativeDriver: false
+      }).start();
+    }
+  }
   
   return (
-    <TouchableWithoutFeedback
-      onPress={() => setLiked(!liked)}
+    <TouchableOpacity
+      onPress={handlePress}
+      activeOpacity={0.75}
     >
-      <Animated.View 
-        style={{
-          ...commonStyles.heartIconContainer,
-          width: 24, 
-          height: 22
-        }}
-      >
-        <HeartIcon />
-      </Animated.View>
-    </TouchableWithoutFeedback>
+      <View style={commonStyles.heartIconContainer}>
+        <Animated.View
+          style={{
+            width: widthHeight.interpolate({
+              inputRange: [0, 0.5, 1],
+              outputRange: [28, 32, 28]
+            }),
+            height: widthHeight.interpolate({
+              inputRange: [0, 0.5, 1],
+              outputRange: [28, 32, 28]
+            })
+          }}
+        >
+          {
+            liked ?
+              <HeartActiveIcon />
+            :
+              <HeartEmptyIcon />
+          }
+        </Animated.View>
+      </View>
+    </TouchableOpacity>
   );
 }

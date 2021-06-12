@@ -19,7 +19,9 @@ export function Structure() {
       }}>
         +3
       </Text>
-      <Heart />
+      <View style={{position: 'absolute', right: 16}}>
+        <Heart />
+      </View>
     </View>
   );
 }

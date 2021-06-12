@@ -37,17 +37,32 @@ export const commonStyles = StyleSheet.create({
     width: '90%',
     borderRadius: 8, 
     marginTop: -51,
+    alignItems: 'center'
   },
   structureContainer: {
-    height: 36, 
     flexDirection: 'row', 
     justifyContent: 'center', 
-    marginTop: 12, 
     alignItems: 'center', 
+    width: '100%',
+    height: 36, 
+    marginVertical: 16, 
     position: 'relative'
   },
   heartIconContainer: {
-    position: 'absolute', 
-    right: 16
+    width: 32, 
+    height: 32, 
+    justifyContent: 'center', 
+    alignItems: 'center'
+  },
+  sliderImage: {
+    width: 300 - 30, 
+    height: 300, 
+    marginHorizontal: 15,
+    resizeMode: 'contain'
+  },
+  sliderDot: {
+    height: 8,
+    borderRadius: 4,
+    marginHorizontal: 4
   }
 });
