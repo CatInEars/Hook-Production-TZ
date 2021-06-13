@@ -12,11 +12,11 @@ export function Nutrition() {
   ]
   return (
     <View>
-      <Text style={commonStyles.nutritionTitle}>
+      <Text style={{...commonStyles._anchorsTitle, marginTop: 0}}>
         Nutrition
       </Text>
 
-      <Text style={commonStyles.nutritionText}>
+      <Text style={commonStyles._anchorsText}>
         Lorem ipsum dolor sit amet, <Text style={commonStyles._bold}>consectetur adipiscing</Text>{' '}
         elit. Ultrices at egestas tempus duis egestas semper 
         dolor <Text style={commonStyles._bold}>morbi purus.</Text> Lorem ipsum dolor sit amet, {' '}

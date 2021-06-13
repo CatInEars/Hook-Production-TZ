@@ -10,6 +10,15 @@ export const commonStyles = StyleSheet.create({
   _bold: {
     fontWeight: 'bold'
   },
+  _anchorsTitle: {
+    marginTop: 24, 
+    fontSize: 22,
+    color: TEXT_COLOR_BLACK,
+    fontWeight: 'bold'
+  },
+  _anchorsText: {
+    marginTop: 14
+  },
   headerContainer: {
     position: 'relative',
     width: '100%', 
@@ -129,7 +138,7 @@ export const commonStyles = StyleSheet.create({
     fontWeight: 'bold'
   },
   recomendedSliderContainer: {
-    marginTop: 14,
+    marginTop: 14
   },
   recomendedContainer: {
     backgroundColor: 'white',
@@ -165,20 +174,13 @@ export const commonStyles = StyleSheet.create({
   },
   anchorsCardContainer: {
     width: '90%',
-    height: 800,
     backgroundColor: 'white',
     zIndex: 100,
     position: 'relative',
     borderRadius: 10,
     marginTop: 28,
-    padding: 22
-  },
-  nutritionTitle: {
-    fontSize: 22,
-    color: TEXT_COLOR_BLACK
-  },
-  nutritionText: {
-    marginTop: 14
+    padding: 22,
+    marginBottom: 60
   },
   nutritionListContainer: {
     flexDirection: 'row', 
@@ -199,8 +201,7 @@ export const commonStyles = StyleSheet.create({
   nutritionParamsSlideContainer: {
     position: 'relative', 
     overflow: 'hidden', 
-    width: '100%',
-    height: 230,
+    width: '100%'
   },
   nutritionParamsSlide: {
     position: 'absolute', 
@@ -250,12 +251,27 @@ export const commonStyles = StyleSheet.create({
     alignItems: 'center', 
     width: '100%',
     height: 40,
-    marginTop: 12,
+    marginTop: 12
   },
   nutritionParamsButtonText: {
     fontSize: 16,
     color: ORANGE,
     fontWeight: 'bold',
     marginRight: 12
+  },
+  otherTableStroke: {
+    width: '100%', 
+    height: 30,
+    flexDirection: 'row', 
+    marginTop: 16,
+  },
+  otherTableQuest: {
+    color: '#878786',
+    fontSize: 12
+  },
+  otherTableAsw: {
+    fontSize: 12,
+    color: TEXT_COLOR_BLACK,
+    textAlign: 'right'
   }
 });

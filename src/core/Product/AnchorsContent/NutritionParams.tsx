@@ -28,13 +28,21 @@ export function NutritionParams() {
   }
 
   return (
-    <View style={commonStyles.nutritionParamsSlideContainer}>
+    <Animated.View 
+      style={{
+        ...commonStyles.nutritionParamsSlideContainer,
+        height: topPosition.interpolate({
+          inputRange: [0, 1],
+          outputRange: [45, 240]
+        })
+      }}
+    >
       <Animated.View 
         style={{
           ...commonStyles.nutritionParamsSlide,
           top: topPosition.interpolate({
             inputRange: [0, 1],
-            outputRange: ['-80%', '0%']
+            outputRange: [-180, 0]
           })
         }}
       >
@@ -90,7 +98,7 @@ export function NutritionParams() {
                   {
                     rotate: topPosition.interpolate({
                       inputRange: [0, 1],
-                      outputRange: ['0deg', '-180deg']
+                      outputRange: ['180deg', '0deg']
                     })
                   }
                 ]
@@ -101,6 +109,6 @@ export function NutritionParams() {
           </>
         </TouchableOpacity>
       </Animated.View>
-    </View>
+    </Animated.View>
   );
 }
