@@ -34,7 +34,12 @@ export function rootReducer(state = initialState, action: IActions): IState {
       }
     }
 
-  } 
+  } else if (action.type === 'PROMOCODE_CHANGE') {
+    return {
+      ...state,
+      promocode: action.value
+    }
+  }
 
   return state
 }

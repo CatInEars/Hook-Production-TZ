@@ -1,10 +1,9 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { Header } from '../components/Header';
-import { CartForm } from './CartForm';
 import { HeaderBackground } from '../components/HeaderBackground';
-import { CartList } from './CartList';
 import { CartCard } from './CartCard';
+import { Payment } from './Payment';
 
 export function Cart() {
   return (
@@ -20,6 +19,7 @@ export function Cart() {
         <View style={{alignItems: 'center'}}>
           <HeaderBackground />
           <CartCard />
+          <Payment />
         </View>
       </ScrollView>
     </>

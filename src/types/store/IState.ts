@@ -3,7 +3,8 @@ interface IState {
   recomendedItem: IProductsData
   cart: {
     [id: number]: ICartProduct
-  }
+  },
+  promocode: boolean
 }
 
 interface IProductsData {

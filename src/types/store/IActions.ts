@@ -1,4 +1,4 @@
-type IActions = ICartCount;
+type IActions = ICartCount | IPromocode;
 
 type ICartCount = ICountIncrement | ICountDecrement
 
@@ -10,4 +10,9 @@ interface ICountIncrement {
 interface ICountDecrement {
   type: 'CART_COUNT_DECREMENT',
   id: number
+}
+
+interface IPromocode {
+  type: 'PROMOCODE_CHANGE',
+  value: boolean
 }

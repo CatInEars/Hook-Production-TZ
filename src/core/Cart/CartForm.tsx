@@ -33,6 +33,7 @@ export function CartForm() {
               placeholder={item.name}
               propValue={item.value}
               key={`inputForm-${index}`}
+              pointer={index === 0 ? true : false}
             />
           ))
         }

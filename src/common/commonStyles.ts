@@ -36,7 +36,7 @@ export const commonStyles = StyleSheet.create({
   _input: {
     paddingHorizontal: 12,
     color: TEXT_COLOR_BLACK,
-    width: '100%',
+    width: '85%',
     height: '80%',
   },
   _lineThrough: {
@@ -310,7 +310,8 @@ export const commonStyles = StyleSheet.create({
     width: '90%',
     backgroundColor: 'white', 
     borderRadius: 10,
-    padding: 22
+    padding: 22,
+    paddingBottom: 12
   },
   cartItemContainer: {
     width: '100%',
@@ -342,5 +343,41 @@ export const commonStyles = StyleSheet.create({
   cartItemCount: {
     fontSize: 12,
     color: '#878786'
+  },
+  paymentContainer: {
+    marginTop: 18, 
+    width: '90%', 
+    justifyContent: 'flex-start'
+  },
+  promoInputContainer: {
+    backgroundColor: 'white',
+    height: 48,
+    borderRadius: 10,
+    marginTop: 12,
+    paddingHorizontal: 18
+  },
+  promoInput: {
+    height: 48,
+    color: '#CCCCCC',
+    fontSize: 17
+  },
+  cartMainPriceContainer: {
+    backgroundColor: 'white',
+    borderRadius: 10, 
+    marginTop: 22, 
+    marginBottom: 150,
+    paddingVertical: 16,
+    paddingHorizontal: 20
+  },
+  cartPaymentText: {
+    fontSize: 18, 
+    color: TEXT_COLOR_BLACK,
+    marginTop: 4
+  },
+  totalSumm: {
+    fontSize: 24,
+    color: TEXT_COLOR_BLACK,
+    marginTop: 12,
+    fontWeight: 'bold'
   }
 });

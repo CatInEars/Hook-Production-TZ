@@ -1,16 +1,18 @@
 import React, { useRef } from 'react';
 import { useState } from 'react';
-import { TextInput, View, Animated } from 'react-native';
+import { TextInput, View, Animated, TouchableOpacity } from 'react-native';
 import { ORANGE } from '../../common/colors';
 import { commonStyles } from '../../common/commonStyles';
+import { PointerLight } from '../../svg/PointerLight';
 
 interface IProps {
   width: number | string,
   placeholder: string
   propValue?: string,
+  pointer?: boolean
 }
 
-export function Input({ width, placeholder, propValue = ''}: IProps) {
+export function Input({ width, placeholder, propValue = '', pointer = true}: IProps) {
 
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState(propValue);
@@ -67,6 +69,21 @@ export function Input({ width, placeholder, propValue = ''}: IProps) {
       >
         {placeholder}
       </Animated.Text>
+      
+      {
+        pointer ?
+        <TouchableOpacity
+          style={{
+            position: 'absolute',
+            right: 14,
+            top: 18
+          }}
+        >
+          <PointerLight />
+        </TouchableOpacity>
+        :
+          null
+      }
     </View>
   );
 }

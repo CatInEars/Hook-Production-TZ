@@ -42,7 +42,8 @@ export const initialState: IState = {
       currency: '£',
       previeImage: eggs2,
       sale: true,
-      cartCount: 12
+      cartCount: 2
     },
-  }
+  },
+  promocode: true
 }
