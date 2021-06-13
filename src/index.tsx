@@ -1,11 +1,19 @@
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { View } from 'react-native';
-import { Product } from './core/Product/Product';
+import { CartScreen } from './navigation/CartScreen';
+import { ProductScreen } from './navigation/ProductScreen';
+
+const Stack = createStackNavigator();
 
 export function Main() {
   return (
-    <View style={{backgroundColor: '#F5F4F2'}}>
-      <Product />
-    </View>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}
+    >
+      <Stack.Screen name="Product" component={ProductScreen} />
+      <Stack.Screen name="Cart" component={CartScreen} />
+    </Stack.Navigator>
   );
 }

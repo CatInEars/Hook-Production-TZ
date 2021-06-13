@@ -1,26 +1,22 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { Header } from '../components/Header';
-import { BuyWithThisProduct } from './BuyWithThisProduct/BuyWithThisProduct';
-import { ProductCard } from './ProdcutCard/ProductCard';
-import { AnchorsContent } from './AnchorsContent/AnchorsContent';
+import { CartAdress } from './CartList';
 import { HeaderBackground } from '../components/HeaderBackground';
 
-export function Product() {
+export function Cart() {
   return (
     <>
-      <Header 
-        title={'Milk & Cheese'}
-        toScreen='Cart'
+      <Header
+        title='Cart'
+        toScreen='Product'
       />
       <ScrollView
         showsVerticalScrollIndicator={false}
       >
         <View style={{alignItems: 'center'}}>
           <HeaderBackground />
-          <ProductCard />
-          <BuyWithThisProduct />
-          <AnchorsContent />
+          <CartAdress />
         </View>
       </ScrollView>
     </>

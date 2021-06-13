@@ -19,14 +19,22 @@ export const commonStyles = StyleSheet.create({
   _anchorsText: {
     marginTop: 14
   },
-  headerContainer: {
-    position: 'relative',
-    width: '100%', 
-    height: 135, 
+  headerSticky: {
+    backgroundColor: ORANGE, 
+    height: 65, 
+    justifyContent: 'flex-start', 
+    marginTop: 0,
+    paddingTop: 20,
+    borderRadius: 10,
+    zIndex: 1,
+    position: 'absolute',
+    width: '100%'
+  },
+  headerBackground: {
+    height: 123,
+    width: '100%',
     backgroundColor: ORANGE,
-    paddingTop: 33,
-    borderBottomRightRadius: 10, 
-    borderBottomLeftRadius: 10,
+    borderRadius: 10
   },
   headerText: {
     marginTop: 4,
@@ -36,8 +44,8 @@ export const commonStyles = StyleSheet.create({
   },
   headerArrowContainer: {
     position: 'absolute',
-    top: 45,
-    left: 12,
+    top: 30,
+    left: 14,
     width: 24, 
     height: 24, 
     justifyContent: 'center',
@@ -273,5 +281,12 @@ export const commonStyles = StyleSheet.create({
     fontSize: 12,
     color: TEXT_COLOR_BLACK,
     textAlign: 'right'
+  },
+  cartAdressContainer: {
+    marginTop: -51, 
+    width: '90%', 
+    height: 900, 
+    backgroundColor: 'white', 
+    borderRadius: 10
   }
 });
