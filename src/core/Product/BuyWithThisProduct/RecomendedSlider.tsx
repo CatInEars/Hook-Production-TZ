@@ -16,11 +16,14 @@ function recomendedSlider({ recomendedItem }: IProps) {
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        style={{height: 330, paddingHorizontal: 20}}
+        style={{height: 330, paddingHorizontal: 22}}
       >
         {
           recomendedImageArr.map((item, index) => (
-            <View style={commonStyles.recomendedContainer}>
+            <View 
+              style={commonStyles.recomendedContainer}
+              key={`recomended-${index}`}
+            >
               <View style={{alignItems: 'flex-end', width: '100%'}}>
                 <Heart />
               </View>

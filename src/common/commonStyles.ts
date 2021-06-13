@@ -7,6 +7,9 @@ export const commonStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  _bold: {
+    fontWeight: 'bold'
+  },
   headerContainer: {
     position: 'relative',
     width: '100%', 
@@ -48,14 +51,18 @@ export const commonStyles = StyleSheet.create({
     position: 'relative'
   },
   heartIconContainer: {
-    width: 32, 
-    height: 32, 
+    width: 29, 
+    height: 29, 
     justifyContent: 'center', 
     alignItems: 'center'
   },
+  structureHeartContainer: {
+    position: 'absolute', 
+    right: 16
+  },
   sliderImage: {
     width: 300 - 30, 
-    height: 300, 
+    height: 270, 
     marginHorizontal: 15,
     resizeMode: 'contain'
   },
@@ -70,7 +77,7 @@ export const commonStyles = StyleSheet.create({
   },
   productNameText: {
     color: TEXT_COLOR_BLACK,
-    fontSize: 18
+    fontSize: 17
   },
   productCountPrice: {
     color: '#999999',
@@ -78,7 +85,8 @@ export const commonStyles = StyleSheet.create({
     fontSize: 15
   },
   productPrice: {
-    fontSize: 28,
+    fontSize: 30,
+    fontWeight: 'bold'
   },
   cartCountText: {
     fontSize: 18,
@@ -88,7 +96,8 @@ export const commonStyles = StyleSheet.create({
   cartAddText: {
     color: ORANGE,
     fontSize: 17,
-    marginRight: 10
+    marginRight: 10,
+    fontWeight: 'bold'
   },
   productLine: {
     height: 1,
@@ -104,21 +113,23 @@ export const commonStyles = StyleSheet.create({
   },
   productAnchorsText: {
     color: ORANGE,
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: 'bold',
     marginBottom: 16
   },
   buyContainer: {
     marginTop: 28,
-    width: '90%',
+    width: '100%',
     justifyContent: 'flex-start'
   },
   buyText: {
     color: TEXT_COLOR_BLACK,
-    fontSize: 17
+    fontSize: 16,
+    paddingLeft: 22,
+    fontWeight: 'bold'
   },
   recomendedSliderContainer: {
-    marginTop: 14
+    marginTop: 14,
   },
   recomendedContainer: {
     backgroundColor: 'white',
@@ -138,10 +149,10 @@ export const commonStyles = StyleSheet.create({
     marginTop: -14
   },
   recomendedText: {
-    fontSize: 16,
     color: TEXT_COLOR_BLACK
   },
   recomendedCount: {
+    fontSize: 13,
     color: '#878786',
     marginTop: 6,
     marginBottom: 14,
@@ -149,6 +160,102 @@ export const commonStyles = StyleSheet.create({
     alignItems: 'flex-start'
   },
   recomendedPrice: {
-    fontSize: 17
+    fontSize: 17,
+    fontWeight: 'bold'
+  },
+  anchorsCardContainer: {
+    width: '90%',
+    height: 800,
+    backgroundColor: 'white',
+    zIndex: 100,
+    position: 'relative',
+    borderRadius: 10,
+    marginTop: 28,
+    padding: 22
+  },
+  nutritionTitle: {
+    fontSize: 22,
+    color: TEXT_COLOR_BLACK
+  },
+  nutritionText: {
+    marginTop: 14
+  },
+  nutritionListContainer: {
+    flexDirection: 'row', 
+    marginTop: 9, 
+    alignItems: 'center'
+  },
+  nutritionListDot: {
+    width: 5, 
+    height: 5, 
+    borderRadius: 4, 
+    backgroundColor: '#999999', 
+    marginRight: 12
+  },
+  nutritionListText: {
+    color: '#999999',
+    fontSize: 13
+  },
+  nutritionParamsSlideContainer: {
+    position: 'relative', 
+    overflow: 'hidden', 
+    width: '100%',
+    height: 230,
+  },
+  nutritionParamsSlide: {
+    position: 'absolute', 
+    width: '100%',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center'
+  },
+  nutritionParamsCard: {
+    width: '22%', 
+    height: 85,
+    margin: 3,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  nutritionParamsValue: {
+    fontSize: 18,
+    color: TEXT_COLOR_BLACK
+  },
+  nutritionParamsType: {
+    color: '#999999',
+    fontSize: 12,
+    marginBottom: 4
+  },
+  nutritionParamsRiContainer: { 
+    flexDirection: 'row'
+  },
+  nutritionParamsRiTextContainer: {
+    backgroundColor: '#EBEBEB', 
+    paddingHorizontal: 5
+  },
+  nutritionParamsLowContainer: {
+    backgroundColor: '#E7F7ED',
+    paddingHorizontal: 5
+  },
+  nutritionParamsLowText: {
+    color: '#0EB44D',
+    fontSize: 10
+  },
+  nutritionParamsRiText: {
+    fontSize: 11,
+    color: '#707070'
+  },
+  nutritionParamsButton: {
+    flexDirection: 'row',
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    width: '100%',
+    height: 40,
+    marginTop: 12,
+  },
+  nutritionParamsButtonText: {
+    fontSize: 16,
+    color: ORANGE,
+    fontWeight: 'bold',
+    marginRight: 12
   }
 });

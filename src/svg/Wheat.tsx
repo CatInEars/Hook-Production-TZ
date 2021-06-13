@@ -4,8 +4,8 @@ import Svg, { SvgProps, Path, Circle } from "react-native-svg"
 export function Wheat(props: SvgProps) {
   return (
     <Svg
-      width={35}
-      height={35}
+      width={28}
+      height={28}
       viewBox="0 0 24 24"
       fill="none"
       {...props}

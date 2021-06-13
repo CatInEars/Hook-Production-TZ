@@ -11,7 +11,7 @@ export function ImageSlider() {
 
   return (
     <>
-      <View style={{height: 300}}>
+      <View style={{height: 270}}>
         <ScrollView
           horizontal={true}
           showsHorizontalScrollIndicator={false}

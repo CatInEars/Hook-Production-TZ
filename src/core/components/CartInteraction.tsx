@@ -59,7 +59,7 @@ function cartInteraction({
         :
         <Text style={{
           ...commonStyles.cartAddText,
-          fontSize: fontSize + 2
+          fontSize: fontSize + 1
         }}>
           Add
         </Text>

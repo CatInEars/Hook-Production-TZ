@@ -40,11 +40,11 @@ export function Heart({ style }: IProps) {
           style={{
             width: widthHeight.interpolate({
               inputRange: [0, 0.5, 1],
-              outputRange: [28, 32, 28]
+              outputRange: [25, 29, 25]
             }),
             height: widthHeight.interpolate({
               inputRange: [0, 0.5, 1],
-              outputRange: [28, 32, 28]
+              outputRange: [25, 29, 25]
             })
           }}
         >

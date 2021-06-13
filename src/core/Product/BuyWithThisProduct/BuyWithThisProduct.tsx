@@ -5,13 +5,11 @@ import { RecomendedSlider } from './RecomendedSlider';
 
 export function BuyWithThisProduct() {
   return (
-    <>
-      <View style={commonStyles.buyContainer}>
-        <Text style={commonStyles.buyText}>
-          Buy with this product
-        </Text>
-      </View>
+    <View style={commonStyles.buyContainer}>
+      <Text style={commonStyles.buyText}>
+        Buy with this product
+      </Text>
       <RecomendedSlider />
-    </>
+    </View>
   );
 }

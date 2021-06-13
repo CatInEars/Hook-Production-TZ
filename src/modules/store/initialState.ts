@@ -27,11 +27,21 @@ export const initialState: IState = {
       count: '1 pc',
       price: 1.59,
       currency: '£'
+    },
+    {
+      id: 3,
+      name: 'Best-in 10 British Big Eggs',
+      count: '1 pc',
+      price: 1.59,
+      currency: '£'
     }
   ],
   cart: {
     12: {
       count: 2
+    },
+    1: {
+      count: 1
     }
   }
 }

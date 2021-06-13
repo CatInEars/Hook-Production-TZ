@@ -10,16 +10,16 @@ import { Heart } from '../../components/Heart';
 export function Structure() {
   return (
     <View style={commonStyles.structureContainer}>
-      <Wheat style={{marginHorizontal: 6}} />
-      <Water style={{marginHorizontal: 6}} />
-      <Nut style={{marginHorizontal: 6}} />
+      <Wheat style={{marginHorizontal: 4}} />
+      <Water style={{marginHorizontal: 4}} />
+      <Nut style={{marginHorizontal: 4}} />
       <Text style={{
         color: TEXT_COLOR_GRAY,
         fontSize: 11
       }}>
         +3
       </Text>
-      <View style={{position: 'absolute', right: 16}}>
+      <View style={commonStyles.structureHeartContainer}>
         <Heart />
       </View>
     </View>
