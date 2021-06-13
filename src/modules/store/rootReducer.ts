@@ -4,7 +4,7 @@ export function rootReducer(state = initialState, action: IActions): IState {
   if (action.type === 'CART_COUNT_INCREMENT') {
 
     const toBeInCart = !!state.cart[action.id]
-    let newObj = {};
+    let newObj = toBeInCart ? {...state.cart[action.id]} : {};
 
     if (!toBeInCart) {
       newObj = {...state.recomendedItem[action.id]}
@@ -16,7 +16,7 @@ export function rootReducer(state = initialState, action: IActions): IState {
         ...state.cart,
         [action.id.toString()]: {
           ...newObj,
-          cartCount: toBeInCart ? state.cart[action.id].cartCount + 1: 1
+          cartCount: toBeInCart ? state.cart[action.id].cartCount + 1 : 1
         }
       }
     }
@@ -28,6 +28,7 @@ export function rootReducer(state = initialState, action: IActions): IState {
       cart: {
         ...state.cart,
         [action.id.toString()]: {
+          ...state.cart[action.id],
           cartCount: state.cart[action.id].cartCount - 1
         }
       }

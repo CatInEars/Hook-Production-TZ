@@ -11,8 +11,8 @@ interface IProps {
   cart: {
     [propName: number]: ICartProduct
   },
-  width?: number,
-  height?: number,
+  width: number,
+  height: number,
   onIncrement: any
   onDecrement: any,
   fontSize?: number

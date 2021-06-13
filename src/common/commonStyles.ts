@@ -294,5 +294,30 @@ export const commonStyles = StyleSheet.create({
     backgroundColor: 'white', 
     borderRadius: 10,
     padding: 22
+  },
+  cartItemContainer: {
+    width: '100%',
+    paddingVertical: 2,
+    height: 80,
+    flexDirection: 'row',
+    marginTop: 4,
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  cartItemImage: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+  },
+  cartItemName: {
+    fontSize: 12
+  },
+  cartItemPrice: {
+    fontSize: 12,
+    fontWeight: 'bold'
+  },
+  cartItemCount: {
+    fontSize: 12,
+    color: '#878786'
   }
 });
