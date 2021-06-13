@@ -24,6 +24,24 @@ export const commonStyles = StyleSheet.create({
     fontWeight: 'bold',
     color: TEXT_COLOR_BLACK
   },
+  _inputContainer: {
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderRadius: 10,
+    marginBottom: 12,
+    height: 54,
+    position: 'relative',
+    justifyContent: 'flex-end'
+  },
+  _input: {
+    paddingHorizontal: 12,
+    color: TEXT_COLOR_BLACK,
+    width: '100%',
+    height: '80%',
+  },
+  _lineThrough: {
+    textDecorationLine: 'line-through'
+  },
   headerSticky: {
     backgroundColor: ORANGE, 
     height: 65, 
@@ -289,8 +307,7 @@ export const commonStyles = StyleSheet.create({
   },
   cartAdressContainer: {
     marginTop: -51, 
-    width: '90%', 
-    height: 900, 
+    width: '90%',
     backgroundColor: 'white', 
     borderRadius: 10,
     padding: 22
@@ -300,9 +317,15 @@ export const commonStyles = StyleSheet.create({
     paddingVertical: 2,
     height: 80,
     flexDirection: 'row',
-    marginTop: 4,
+    marginVertical: 12,
     alignItems: 'center',
     justifyContent: 'space-between'
+  },
+  offerSend: {
+    fontSize: 8, 
+    backgroundColor: '#FFEBBF', 
+    padding: 3,
+    width: 140
   },
   cartItemImage: {
     width: 50,

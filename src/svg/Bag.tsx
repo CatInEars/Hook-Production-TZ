@@ -1,7 +1,7 @@
 import * as React from "react"
 import Svg, { SvgProps, Path } from "react-native-svg"
 
-export function TrashNBC(props: SvgProps) {
+export function Bag(props: SvgProps) {
   return (
     <Svg
       width={17}

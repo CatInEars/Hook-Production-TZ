@@ -1,5 +1,5 @@
 import { recomendedItem } from "../recomendedItem";
-import { eggs1, img0 } from "../sliderImageArr";
+import { eggs1, eggs2, img0 } from "../sliderImageArr";
 
 export const initialState: IState = {
   productsData: {
@@ -31,7 +31,18 @@ export const initialState: IState = {
       count: '1 pc',
       price: 1.59,
       currency: '£',
-      previeImage: eggs1
-    }
+      previeImage: eggs1,
+      priceChanged: true
+    },
+    2: {
+      id: 2,
+      name: 'Best-in 10 British Big Eggs',
+      count: '1 pc',
+      price: 1.19,
+      currency: '£',
+      previeImage: eggs2,
+      sale: true,
+      cartCount: 12
+    },
   }
 }

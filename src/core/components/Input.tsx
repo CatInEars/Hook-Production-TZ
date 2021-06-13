@@ -1,36 +1,20 @@
-import React from 'react';
-import { useRef } from 'react';
-import { useEffect } from 'react';
+import React, { useRef } from 'react';
 import { useState } from 'react';
 import { TextInput, View, Animated } from 'react-native';
-import { ORANGE, TEXT_COLOR_BLACK } from '../../common/colors';
+import { ORANGE } from '../../common/colors';
+import { commonStyles } from '../../common/commonStyles';
 
 interface IProps {
   width: number | string,
   placeholder: string
   propValue?: string,
-  clearTrigger?: number
 }
 
-export function Input({ width, placeholder, propValue = '', clearTrigger = 0}: IProps) {
+export function Input({ width, placeholder, propValue = ''}: IProps) {
 
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState(propValue);
   const topPosition = useRef(new Animated.Value(!!propValue ? 1 : 0)).current;
-
-  useEffect(() => {
-
-    if (clearTrigger === 0) return;
-    
-    setValue('');
-
-    Animated.timing(topPosition, {
-      toValue: 0,
-      duration: 90,
-      useNativeDriver: false
-    }).start();
-
-  }, [clearTrigger])
 
   const handlePress = () => {
     setFocus(!focus);
@@ -51,26 +35,13 @@ export function Input({ width, placeholder, propValue = '', clearTrigger = 0}: I
   }
 
   return (
-    <View
-      style={{
-        borderWidth: 1,
-        borderColor: focus ? ORANGE : '#EBEBEB',
-        borderStyle: 'solid',
-        borderRadius: 10,
-        marginBottom: 12,
-        height: 54,
-        position: 'relative',
-        justifyContent: 'flex-end',
-        width
-      }}
-    >
+    <View style={{
+      ...commonStyles._inputContainer,
+      borderColor: focus ? ORANGE : '#EBEBEB',
+      width
+    }}>
       <TextInput
-        style={{
-          paddingHorizontal: 12,
-          color: TEXT_COLOR_BLACK,
-          width: '100%',
-          height: '80%',
-        }}
+        style={commonStyles._input}
         onFocus={handlePress}
         onBlur={handlePress}
         value={value}

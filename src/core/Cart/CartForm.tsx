@@ -2,13 +2,10 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { commonStyles } from '../../common/commonStyles';
 import { inputsArr } from '../../modules/inputsArr';
-import { TrashNBC } from '../../svg/TrashNBC';
+import { Bag } from '../../svg/Bag';
 import { Input } from '../components/Input';
 
 export function CartForm() {
-
-  const [cleared, setCleared] = useState(0);
-
   return (
     <>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}> 
@@ -16,12 +13,7 @@ export function CartForm() {
           Delivery address
         </Text>
 
-        <TouchableOpacity
-          onPress={() => setCleared(cleared + 1)}
-          activeOpacity={0.5}
-        >
-          <TrashNBC />
-        </TouchableOpacity>
+        <Bag />
       </View>
 
 
@@ -38,8 +30,7 @@ export function CartForm() {
           inputsArr.map((item, index) => (
             <Input 
               width={item.width} 
-              placeholder={item.name} 
-              clearTrigger={cleared}
+              placeholder={item.name}
               propValue={item.value}
               key={`inputForm-${index}`}
             />

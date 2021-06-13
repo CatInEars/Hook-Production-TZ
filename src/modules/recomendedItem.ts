@@ -15,15 +15,17 @@ export const recomendedItem: IProductsData = {
     count: '1 pc',
     price: 1.59,
     currency: '£',
-    previeImage: eggs1
+    previeImage: eggs1,
+    priceChanged: true
   },
   2: {
     id: 2,
     name: 'Best-in 10 British Big Eggs',
     count: '1 pc',
-    price: 1.59,
+    price: 1.19,
     currency: '£',
-    previeImage: eggs2
+    previeImage: eggs2,
+    sale: true
   },
   3: {
     id: 3,

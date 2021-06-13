@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { commonStyles } from '../../common/commonStyles';
 import { CartItem } from '../components/CartItem';
@@ -12,22 +12,24 @@ interface IProps {
 
 function cartList({ cart }: IProps) {
   const itemArr = [];
+  let index = 0;
 
   for (let key in cart) {
     if (cart[key].cartCount !== 0) {
-      itemArr.push(<CartItem item={cart[key]} key={`cartItem-${key}`} />);
+      index++;
+      itemArr.push(<CartItem item={cart[key]} key={`cartItem-${key}`} index={index} />);
     };
   }
 
   return (
     <View style={{marginTop: 24}}>
       <Text style={commonStyles._cartTitle}>
-        2 items
+        {itemArr.length} items
       </Text>
 
       <View>
         {
-          itemArr.map((item, index) => item)
+          itemArr.map((item) => item)
         }
       </View>
     </View>

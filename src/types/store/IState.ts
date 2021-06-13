@@ -16,7 +16,9 @@ interface IProduct {
   count: string,
   price: number,
   currency: string,
-  previeImage: any
+  previeImage: any,
+  priceChanged?: boolean,
+  sale?: boolean
 }
 
 interface ICartProduct extends IProduct {
