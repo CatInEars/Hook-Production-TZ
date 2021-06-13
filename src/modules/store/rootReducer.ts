@@ -2,27 +2,38 @@ import { initialState } from "./initialState";
 
 export function rootReducer(state = initialState, action: IActions): IState {
   if (action.type === 'CART_COUNT_INCREMENT') {
-    const toBe = !!state.cart[action.id];
+
+    const toBeInCart = !!state.cart[action.id]
+    let newObj = {};
+
+    if (!toBeInCart) {
+      newObj = {...state.recomendedItem[action.id]}
+    }
+
     return {
       ...state,
       cart: {
         ...state.cart,
         [action.id.toString()]: {
-          count: toBe ? state.cart[action.id].count + 1 : 1
+          ...newObj,
+          cartCount: toBeInCart ? state.cart[action.id].cartCount + 1: 1
         }
       }
     }
+
   } else if (action.type === 'CART_COUNT_DECREMENT') {
+
     return {
       ...state,
       cart: {
         ...state.cart,
         [action.id.toString()]: {
-          count: state.cart[action.id].count - 1
+          cartCount: state.cart[action.id].cartCount - 1
         }
       }
     }
-  } else {
-    return state
-  }
+
+  } 
+
+  return state
 }

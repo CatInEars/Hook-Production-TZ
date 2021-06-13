@@ -7,6 +7,7 @@ import { CartInteraction } from '../../components/CartInteraction';
 interface IProps {
   product: IProduct
 }
+
 function productInfo({ product }: IProps) {
   return (
     <View style={commonStyles.productNameContainer}>
@@ -39,6 +40,6 @@ function productInfo({ product }: IProps) {
 
 export const ProductName = connect(
   (state: IState) => ({
-    product: state.productData
+    product: state.productsData[4]
   })
 )(productInfo);

@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Image, ScrollView, Text } from 'react-native';
 import { connect } from 'react-redux';
-import { commonStyles } from '../../../common/commonStyles';
+import { commonStyles } from '../../../common/commonStyles'
 import { recomendedImageArr } from '../../../modules/sliderImageArr';
 import { Heart } from '../../components/Heart';
 import { CartInteraction } from '../../components/CartInteraction';
 
 interface IProps {
-  recomendedItem: IProduct[];
+  recomendedItem: IProductsData;
 }
 
 function recomendedSlider({ recomendedItem }: IProps) {

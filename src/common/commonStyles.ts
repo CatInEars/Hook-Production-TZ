@@ -19,6 +19,11 @@ export const commonStyles = StyleSheet.create({
   _anchorsText: {
     marginTop: 14
   },
+  _cartTitle: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: TEXT_COLOR_BLACK
+  },
   headerSticky: {
     backgroundColor: ORANGE, 
     height: 65, 
@@ -289,10 +294,5 @@ export const commonStyles = StyleSheet.create({
     backgroundColor: 'white', 
     borderRadius: 10,
     padding: 22
-  },
-  cartAdressText: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: TEXT_COLOR_BLACK
   }
 });

@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { commonStyles } from '../../common/commonStyles';
+import { inputsArr } from '../../modules/inputsArr';
 import { TrashNBC } from '../../svg/TrashNBC';
 import { Input } from '../components/Input';
 
-export function CartAdress() {
+export function CartForm() {
+
+  const [cleared, setCleared] = useState(0);
+
   return (
-    <View style={commonStyles.cartAdressContainer}>
+    <>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}> 
-        <Text style={commonStyles.cartAdressText}>
+        <Text style={commonStyles._cartTitle}>
           Delivery address
         </Text>
 
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={() => setCleared(cleared + 1)}
           activeOpacity={0.5}
         >
           <TrashNBC />
@@ -27,14 +31,21 @@ export function CartAdress() {
           width: '100%',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
-          marginTop: 36,
+          marginTop: 18,
         }}
       >
-        <Input width='100%' placeholder='City' propValue='SE1 6DR, 42 Newington Causeway...'/> 
-        <Input width='32%' placeholder='Flat' propValue='133' />
-        <Input width='32%' placeholder='Floor' />
-        <Input width='32%' placeholder='Block' />
+        {
+          inputsArr.map((item, index) => (
+            <Input 
+              width={item.width} 
+              placeholder={item.name} 
+              clearTrigger={cleared}
+              propValue={item.value}
+              key={`inputForm-${index}`}
+            />
+          ))
+        }
       </View>
-    </View>
+    </>
   );
 }

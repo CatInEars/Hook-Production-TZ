@@ -1,9 +1,13 @@
 interface IState {
-  productData:  IProduct,
-  recomendedItem: IProduct[]
+  productsData:  IProductsData,
+  recomendedItem: IProductsData
   cart: {
     [id: number]: ICartProduct
   }
+}
+
+interface IProductsData {
+  [id: number]: IProduct
 }
 
 interface IProduct {
@@ -12,9 +16,9 @@ interface IProduct {
   count: string,
   price: number,
   currency: string,
-  previeImage?: any
+  previeImage: any
 }
 
-interface ICartProduct {
-  count: number
+interface ICartProduct extends IProduct {
+  cartCount: number
 }

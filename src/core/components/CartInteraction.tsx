@@ -28,10 +28,10 @@ function cartInteraction({
   fontSize = 16
 }: IProps) {
   const toBe = !!cart[id];
-  const [cartCount, setCartCount] = useState(toBe ? cart[id].count : 0);
+  const [cartCount, setCartCount] = useState(toBe ? cart[id].cartCount : 0);
 
   useEffect(() => {
-    setCartCount(toBe ? cart[id].count : 0);
+    setCartCount(toBe ? cart[id].cartCount : 0);
   }, [cart])
 
   return (

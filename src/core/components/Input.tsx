@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRef } from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { TextInput, View, Animated } from 'react-native';
 import { ORANGE, TEXT_COLOR_BLACK } from '../../common/colors';
@@ -7,14 +8,29 @@ import { ORANGE, TEXT_COLOR_BLACK } from '../../common/colors';
 interface IProps {
   width: number | string,
   placeholder: string
-  propValue?: string
+  propValue?: string,
+  clearTrigger?: number
 }
 
-export function Input({ width, placeholder, propValue = '' }: IProps) {
+export function Input({ width, placeholder, propValue = '', clearTrigger = 0}: IProps) {
 
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState(propValue);
   const topPosition = useRef(new Animated.Value(!!propValue ? 1 : 0)).current;
+
+  useEffect(() => {
+
+    if (clearTrigger === 0) return;
+    
+    setValue('');
+
+    Animated.timing(topPosition, {
+      toValue: 0,
+      duration: 90,
+      useNativeDriver: false
+    }).start();
+
+  }, [clearTrigger])
 
   const handlePress = () => {
     setFocus(!focus);
