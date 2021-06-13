@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { Header } from '../components/Header';
-import { CartAdress } from './CartList';
+import { CartAdress } from './CartAdress';
 import { HeaderBackground } from '../components/HeaderBackground';
 
 export function Cart() {

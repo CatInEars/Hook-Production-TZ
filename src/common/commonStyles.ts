@@ -287,6 +287,12 @@ export const commonStyles = StyleSheet.create({
     width: '90%', 
     height: 900, 
     backgroundColor: 'white', 
-    borderRadius: 10
+    borderRadius: 10,
+    padding: 22
+  },
+  cartAdressText: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: TEXT_COLOR_BLACK
   }
 });
