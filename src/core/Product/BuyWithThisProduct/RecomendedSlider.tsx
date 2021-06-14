@@ -24,7 +24,7 @@ function recomendedSlider({ recomendedItem }: IProps) {
               style={commonStyles.recomendedContainer}
               key={`recomended-${index}`}
             >
-              <View style={{alignItems: 'flex-end', width: '100%'}}>
+              <View style={commonStyles.sliderHeartContainer}>
                 <Heart />
               </View>
               <Image source={item} style={commonStyles.recomendedImage} />
@@ -34,10 +34,12 @@ function recomendedSlider({ recomendedItem }: IProps) {
               </Text>
 
               <Text style={commonStyles.recomendedCount}>
-                {recomendedItem[index].count} / {recomendedItem[index].currency}{recomendedItem[index].price}
+                {recomendedItem[index].count} / {' '}
+                {recomendedItem[index].currency}
+                {recomendedItem[index].price}
               </Text>
 
-              <View style={{flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
+              <View style={{...commonStyles._spaceBetween, width: '100%'}}>
                 <Text style={commonStyles.recomendedPrice}>
                   {recomendedItem[index].currency}{recomendedItem[index].price}
                 </Text>

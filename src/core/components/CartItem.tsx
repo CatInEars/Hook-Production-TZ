@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { commonStyles } from '../../common/commonStyles';
+import { FONT } from '../../common/fontsFastImage';
 import { CartInteraction } from '../components/CartInteraction';
 
 interface IProps {
@@ -13,7 +14,7 @@ export function CartItem({ item, index }: IProps) {
     <>
     {
       index > 1 ?
-        <View style={{width: '100%', height: 1, backgroundColor: '#F2F2F2'}} />
+        <View style={commonStyles.cartLine} />
       :
         null
     }
@@ -25,7 +26,7 @@ export function CartItem({ item, index }: IProps) {
         />
       </View>
 
-      <View style={{width: '50%', height: '100%', justifyContent: "space-evenly"}}>
+      <View style={commonStyles.cartItemInfoContainer}>
         <Text style={commonStyles.cartItemName}>
           {item.name}
         </Text>
@@ -34,7 +35,9 @@ export function CartItem({ item, index }: IProps) {
           !!item.priceChanged ?
             <Text style={commonStyles.offerSend}>
               Price has been changed: {' '}
-              <Text style={commonStyles._lineThrough}>(£2.59)</Text>
+              <Text style={commonStyles._lineThrough}>
+                (£2.59)
+              </Text>
             </Text>
           :
             null
@@ -42,15 +45,20 @@ export function CartItem({ item, index }: IProps) {
 
         {
           !!item.sale ?
-            <Text style={{...commonStyles.offerSend, width: 82}}>
+            <Text 
+              style={{...commonStyles.offerSend, width: 80}}
+            >
               Special offer: 
-              <Text style={commonStyles._bold}>-20%</Text>
+
+              <Text style={commonStyles._bold}>
+                -20%
+              </Text>
             </Text>
           :
             null
         }
         
-        <View style={{flexDirection: 'row'}}>
+        <View style={commonStyles._row}>
           <Text style={{
             ...commonStyles.cartItemPrice,
             color: !!item.priceChanged || !!item.sale ? '#E5243F' : 'black'
@@ -67,7 +75,8 @@ export function CartItem({ item, index }: IProps) {
             <Text style={{
               ...commonStyles._lineThrough,
               fontSize: 10,
-              color: '#999999'
+              color: '#999999',
+              ...FONT.Open400
             }}>
               {item.currency}1.59
             </Text>
@@ -76,7 +85,7 @@ export function CartItem({ item, index }: IProps) {
         }
       </View>
 
-      <View style={{justifyContent: 'flex-end', height: '100%'}}>
+      <View style={commonStyles.cartItemInteractiveContainer}>
         <CartInteraction
           id={item.id}
           fontSize={14}

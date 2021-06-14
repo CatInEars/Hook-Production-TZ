@@ -8,9 +8,7 @@ import { Trash } from '../../svg/Trash';
 
 interface IProps {
   id: number,
-  cart: {
-    [propName: number]: ICartProduct
-  },
+  cart: ICartProductsData,
   width: number,
   height: number,
   onIncrement: any
@@ -27,6 +25,7 @@ function cartInteraction({
   height,
   fontSize = 16
 }: IProps) {
+
   const toBe = !!cart[id];
   const [cartCount, setCartCount] = useState(toBe ? cart[id].cartCount : 0);
 

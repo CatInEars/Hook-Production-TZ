@@ -3,6 +3,7 @@ import { ScrollView, View } from 'react-native';
 import { Header } from '../components/Header';
 import { HeaderBackground } from '../components/HeaderBackground';
 import { CartCard } from './CartCard';
+import { CartDelivery } from './CartDelivery';
 import { Payment } from './Payment';
 
 export function Cart() {
@@ -22,6 +23,8 @@ export function Cart() {
           <Payment />
         </View>
       </ScrollView>
+
+      <CartDelivery />
     </>
   );
 }

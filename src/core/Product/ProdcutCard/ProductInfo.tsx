@@ -19,7 +19,7 @@ function productInfo({ product }: IProps) {
         {product.count} / {product.currency}{product.price}
       </Text>
 
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+      <View style={commonStyles._spaceBetween}>
         <Text style={commonStyles.productPrice}>
           {product.currency}{product.price}
         </Text>

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import { commonStyles } from '../../common/commonStyles';
+import { findSumm } from '../../modules/findSum';
 import { CompleateIcon } from '../../svg/CompleateIcon';
 
 interface IProps {
@@ -14,20 +15,11 @@ interface IProps {
 }
 
 function payment({ onPromocodeChange, promocode, cart }: IProps) {
-
-  const findSumm = (): number => {
-    let sum = 0;
-    for (let key in cart) {
-      sum += cart[key].cartCount * cart[key].price
-    }
-    return +sum.toFixed(2);
-  };
-
   const [value, setValue] = useState('GHYU907H');
-  const [priceSumm, setPriceSumm] = useState<number>(findSumm())
+  const [priceSumm, setPriceSumm] = useState<number>(findSumm(cart))
 
   useEffect(() => {
-    setPriceSumm(findSumm());
+    setPriceSumm(findSumm(cart));
   }, [promocode, cart])
 
   const handleChange = (newValue: string) => {
@@ -55,11 +47,7 @@ function payment({ onPromocodeChange, promocode, cart }: IProps) {
         {
           promocode ?
             <CompleateIcon 
-              style={{
-                position: 'absolute',
-                right: 9,
-                top: 10
-              }}
+              style={commonStyles.compleateIcon}
             />
           :
             null
@@ -111,7 +99,7 @@ function payment({ onPromocodeChange, promocode, cart }: IProps) {
 
         <View style={commonStyles.productLine} />
         
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={commonStyles._spaceBetween}>
           <Text style={commonStyles.totalSumm}>
             Total:
           </Text>

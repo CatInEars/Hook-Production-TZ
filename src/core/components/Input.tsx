@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { TextInput, View, Animated, TouchableOpacity } from 'react-native';
 import { ORANGE } from '../../common/colors';
 import { commonStyles } from '../../common/commonStyles';
+import { FONT } from '../../common/fontsFastImage';
 import { PointerLight } from '../../svg/PointerLight';
 
 interface IProps {
@@ -53,6 +54,7 @@ export function Input({ width, placeholder, propValue = '', pointer = true}: IPr
         style={{
           position: 'absolute',
           color: '#878786',
+          ...FONT.Noto500,
           left: topPosition.interpolate({
             inputRange: [0, 1],
             outputRange: [16, 6]
@@ -73,11 +75,7 @@ export function Input({ width, placeholder, propValue = '', pointer = true}: IPr
       {
         pointer ?
         <TouchableOpacity
-          style={{
-            position: 'absolute',
-            right: 14,
-            top: 18
-          }}
+          style={commonStyles._inputPointer}
         >
           <PointerLight />
         </TouchableOpacity>

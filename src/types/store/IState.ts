@@ -1,14 +1,16 @@
 interface IState {
   productsData:  IProductsData,
   recomendedItem: IProductsData
-  cart: {
-    [id: number]: ICartProduct
-  },
+  cart: ICartProductsData,
   promocode: boolean
 }
 
 interface IProductsData {
   [id: number]: IProduct
+}
+
+interface ICartProductsData{
+  [id: number]: ICartProduct
 }
 
 interface IProduct {

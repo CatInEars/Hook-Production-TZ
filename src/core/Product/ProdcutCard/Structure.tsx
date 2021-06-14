@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { TEXT_COLOR_GRAY } from '../../../common/colors';
 import { commonStyles } from '../../../common/commonStyles';
+import { FONT } from '../../../common/fontsFastImage';
 import { Nut } from '../../../svg/Nut';
 import { Water } from '../../../svg/Water';
 import { Wheat } from '../../../svg/Wheat';
@@ -15,7 +16,8 @@ export function Structure() {
       <Nut style={{marginHorizontal: 4}} />
       <Text style={{
         color: TEXT_COLOR_GRAY,
-        fontSize: 11
+        fontSize: 11,
+        ...FONT.Open600
       }}>
         +3
       </Text>

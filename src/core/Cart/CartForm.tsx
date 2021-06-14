@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text } from 'react-native';
 import { commonStyles } from '../../common/commonStyles';
 import { inputsArr } from '../../modules/inputsArr';
 import { Bag } from '../../svg/Bag';
@@ -8,7 +8,7 @@ import { Input } from '../components/Input';
 export function CartForm() {
   return (
     <>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}> 
+      <View style={commonStyles.cartFormTitleContainer}> 
         <Text style={commonStyles._cartTitle}>
           Delivery address
         </Text>
@@ -17,15 +17,7 @@ export function CartForm() {
       </View>
 
 
-      <View 
-        style={{
-          flexDirection: 'row', 
-          width: '100%',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          marginTop: 18,
-        }}
-      >
+      <View style={commonStyles.cartFormInputsContainer}>
         {
           inputsArr.map((item, index) => (
             <Input 

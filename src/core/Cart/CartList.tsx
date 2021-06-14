@@ -16,8 +16,15 @@ function cartList({ cart }: IProps) {
 
   for (let key in cart) {
     if (cart[key].cartCount !== 0) {
+
       index++;
-      itemArr.push(<CartItem item={cart[key]} key={`cartItem-${key}`} index={index} />);
+      itemArr.push(
+        <CartItem 
+          item={cart[key]} 
+          key={`cartItem-${key}`} 
+          index={index} 
+      />);
+      
     };
   }
 
