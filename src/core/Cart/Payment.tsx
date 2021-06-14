@@ -20,6 +20,10 @@ function payment({ onPromocodeChange, promocode, cart }: IProps) {
 
   useEffect(() => {
     setPriceSumm(findSumm(cart));
+
+    return () => {
+      onPromocodeChange(true)
+    }
   }, [promocode, cart])
 
   const handleChange = (newValue: string) => {

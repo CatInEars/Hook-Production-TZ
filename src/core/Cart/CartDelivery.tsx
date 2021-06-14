@@ -29,7 +29,7 @@ function cartDelivery({ promocode, cart }: IProps) {
     <View style={commonStyles.cartDeliveryContainer}>
       <View>
         <BoxShadow setting={shadowSettings}>
-          <LighterCart style={{marginTop: 5}} />
+          <LighterCart style={{marginTop: 5, marginLeft: 6}} />
         </BoxShadow>
       </View>
 
@@ -54,7 +54,7 @@ function cartDelivery({ promocode, cart }: IProps) {
           fontWeight: 'bold',
           color: 'white'
         }}>
-          £{priceSumm - (0.4 * +promocode)}
+          £{(priceSumm - (0.4 * +promocode)).toFixed(2)}
         </Text>
       </View>
 
